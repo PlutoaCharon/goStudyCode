@@ -1,0 +1,24 @@
+package main
+
+import (
+	"fmt"
+	"goStudyCode/golangExercise/chapter3/words"
+	"io/ioutil"
+	"os"
+)
+
+func main() {
+	filename := os.Args[1]
+	fmt.Println(os.Args[1])
+
+	contents, err := ioutil.ReadFile(filename)
+	if err != nil {
+		fmt.Println("There was an error opening the file:", err)
+		return
+	}
+
+	text := string(contents)
+
+	count := words.CountWords(text)
+	fmt.Printf("There are %d words in you text. \n", count)
+}
