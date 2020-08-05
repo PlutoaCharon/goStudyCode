@@ -84,7 +84,7 @@ func (r *WeightRoundRobinBalance) Update() {
 		fmt.Println("WeightRoundRobinBalance get conf:", conf.GetConf())
 		r.rss = nil
 		for _, ip := range conf.GetConf() {
-			r.Add(strings.Split(ip, ",")...)
+			_ = r.Add(strings.Split(ip, ",")...)
 		}
 	}
 }
